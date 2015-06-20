@@ -3,6 +3,7 @@
     {{ partial "sidebarheader.html" . }}
 
     {{ if .Site.Params.sidebartitle }}<h1 class="brand-title">{{ .Site.Params.sidebartitle }}</h1>{{ end }}
+    {{ if .Site.Params.sidebarsubtitle }}<h1 class="brand-title brand-subtitle">{{ .Site.Params.sidebarsubtitle | safeHTML }}</h1>{{ end }}
     {{ if .Site.Params.sidebartagline }}<h2 class="brand-tagline">{{ .Site.Params.sidebartagline }}</h2>{{ end }}
 
     <nav class="nav">
