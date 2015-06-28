@@ -8,7 +8,7 @@
 
 	<div id="layout" class="pure-g">
     {{ partial "sidebar.html" . }}
-	
+
 	{{ if .Params.banner }}
 	<div class="content-banner-image pure-u-1 pure-u-md-3-4" style="{{ if .Params.bannerheight }}height: {{ .Params.bannerheight }}px;{{ end }}">
 		<img src="{{ .Params.banner }}" class="pure-img" style="{{ if .Params.bannerfill }}width: 100%;{{ end }}" />
@@ -50,7 +50,7 @@
 			{{ if .Params.categories }}
 				<div class="post-categories">
 				{{ range .Params.categories }}
-					<a class="post-category post-category-{{ . | urlize }}" href="{{ $Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>
+					<a class="post-category post-category-{{ . | urlize }}" href="/categories/{{ . | urlize }}">{{ . }}</a>
 				{{ end }}
 				</div>
 			{{ end }}
@@ -64,7 +64,7 @@
 			{{ end }}
 
             {{ .Content }}
-	
+
 			{{ if .Params.socialsharing }}
 		    	{{ partial "socialsharing.html" . }}
 		    {{ end }}
@@ -73,7 +73,7 @@
 				<div class="tags-list">
 					<span class="dark-red">Tags</span><span class="decorative-marker">//</span>
 					{{ range .Params.tags }}
-	                <a class="post-tag post-tag-{{ . | urlize }}" href="{{ $Site.BaseURL}}/tags/{{ . | urlize }}">{{ . }}</a>,
+	                <a class="post-tag post-tag-{{ . | urlize }}" href="/tags/{{ . | urlize }}">{{ . }}</a>,
 	                {{ end }}
 				</div>
 			{{ end }}
@@ -100,7 +100,7 @@
           {{ if not .Params.nocomment }}
           	{{ partial "disqus.html" . }}
           {{ end }}
-        
+
       {{ partial "footer.html" . }}
     </div>
   </div>
